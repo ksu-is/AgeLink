@@ -8,16 +8,15 @@ Many seniors today feel **isolated**, especially those unfamiliar with complex t
 
 - **Shared hobbies or interests**
 - **Location & availability**
-- **Real-time chat and video**
-- **Events and meetups**
+- **Real-time chat and video(optional)**
+- **Meetups**
 
 
 ##  Features
 
 -  Customizable user profiles (interests, availability, location)
 -  Intelligent matching algorithm for connecting users with similar hobbies
--  Real-time communication via chat or video (WebSocket)
--  Event/group discovery (community-based and interest-driven)
+-  Real-time communication via chat or video(Optional)
 -  User authentication & secure data management
 -  Responsive and accessible UI for older users
 
@@ -25,11 +24,11 @@ Many seniors today feel **isolated**, especially those unfamiliar with complex t
 
 | Layer         | Technology               |
 |--------------|--------------------------|
-| Backend       | Python            |
+| Backend       | Python, Flask |
 | Frontend      | HTML/CSS |
-| Real-time     | WebSocket |
+| Real-time     | WebSocket (Optional) |
 | Database      | SQL |
-| Deployment    | TBD |
+| Deployment    | PythonAnywhere |
 
 
 ##  Inspiration
