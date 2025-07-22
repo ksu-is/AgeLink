@@ -55,7 +55,7 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
-@app.route('/profile')
+@app.route('/profile') 
 @login_required
 def profile():
     friends = User.get_connections(current_user.id)
