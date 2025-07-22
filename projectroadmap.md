@@ -5,15 +5,15 @@
 
 ##  1: Setup and User Authentication
 
-- [ ] Install Flask, and basic dependencies
-- [ ] Create project folder and set up virtual environment
-- [ ] Initialize a basic Flask app (`app.py`)
-- [ ] Create homepage (`/`) and simple template
-- [ ] Create basic HTML template
+- [X] Install Flask, and basic dependencies
+- [X] Create project folder and set up virtual environment
+- [X] Initialize a basic Flask app (`app.py`)
+- [X] Create homepage (`/`) and simple template
+- [X] Create basic HTML template
 - [ ] Set up a basic database using SQL
-- [ ] Create User model (username, email, password)
-- [ ] Implement signup form
-- [ ] Implement login and logout functionality with Flask-Login
+- [X] Create User model (username, email, password)
+- [X] Implement signup form
+- [X] Implement login and logout functionality with Flask-Login
 
 ---
 
