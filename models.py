@@ -56,7 +56,7 @@ class User(UserMixin):
             c.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
             conn.commit()
 
-    @staticmethod
+    @staticmethod 
     def get_all_except(user_id):
         with sqlite3.connect(DB_NAME) as conn:
             c = conn.cursor()
