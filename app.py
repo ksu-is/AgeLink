@@ -3,7 +3,7 @@ from flask_login import LoginManager, login_user, login_required, logout_user, c
 from forms import RegisterForm, LoginForm
 from models import User, init_db
 
-app = Flask(__name__)
+app = Flask(__name__) 
 app.config['SECRET_KEY'] = 'your-secret-key'
 
 init_db()  # Created DB & table on startup
