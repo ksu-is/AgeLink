@@ -62,7 +62,7 @@ def profile():
     return render_template('profile.html', name=current_user.username, friends=friends)
 
 @app.route('/users')
-@login_required
+@login_required 
 def users():
     other_users = User.get_all_except(current_user.id)
     return render_template('user_directory.html', users=other_users, User=User, current_user=current_user)
