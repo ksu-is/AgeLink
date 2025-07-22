@@ -64,7 +64,7 @@ class User(UserMixin):
             rows = c.fetchall()
             return [User(*row) for row in rows]
 
-    @staticmethod
+    @staticmethod 
     def add_connection(user_id, friend_id):
         with sqlite3.connect(DB_NAME) as conn:
             c = conn.cursor()
