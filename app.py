@@ -67,7 +67,7 @@ def users():
     other_users = User.get_all_except(current_user.id)
     return render_template('user_directory.html', users=other_users, User=User, current_user=current_user)
 
-@app.route('/connect/<int:user_id>', methods=['POST'])
+@app.route('/connect/<int:user_id>', methods=['POST']) 
 @login_required
 def connect(user_id):
     User.add_connection(current_user.id, user_id)
