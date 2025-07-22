@@ -15,7 +15,7 @@ def init_db():
         ''')
 
         c.execute(''' 
-            CREATE TABLE IF NOT EXISTS connections (
+            CREATE TABLE IF NOT EXISTS connections ( 
                 user_id INTEGER,
                 friend_id INTEGER,
                 UNIQUE(user_id, friend_id)
