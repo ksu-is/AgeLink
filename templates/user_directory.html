@@ -1,0 +1,18 @@
+<ul>
+    {% for user in users %}
+        <li>
+            {{ user.username }}
+
+            {% if not User.is_connected(current_user.id, user.id) %}
+                <!-- Show Connect button if not connected -->
+                <form action="{{ url_for('connect', user_id=user.id) }}" method="post" style="display:inline;">
+                    <button type="submit">Connect</button>
+                </form>
+            {% else %}
+                <span style="color: gray;">Already Connected</span>
+            {% endif %}
+        </li>
+    {% else %}
+        <li>No other users found.</li>
+    {% endfor %}
+</ul>
