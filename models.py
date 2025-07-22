@@ -14,7 +14,7 @@ def init_db():
             )
         ''')
 
-        c.execute('''
+        c.execute(''' 
             CREATE TABLE IF NOT EXISTS connections (
                 user_id INTEGER,
                 friend_id INTEGER,
