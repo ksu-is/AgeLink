@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Agelink Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>AgeLink Home</title>
+    <style>
+      
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('/static/background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        /* Center container */
+        .center-container {
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Vertical center */
+            align-items: center;     /* Horizontal center */
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); 
+            padding: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Agelink</h1>
-    <p>A community for seniors to connect!</p>
+    <div class="center-container">
+        <h1>Welcome to AgeLink!</h1>
+        <p>Connect across generations.</p>
+
+        <form method="GET" action="{{ url_for('login') }}" style="display: inline;">
+            <button type="submit">Login</button>
+        </form>
+
+        <form method="GET" action="{{ url_for('register') }}" style="display: inline;">
+            <button type="submit">Register</button>
+        </form>
+    </div>
 </body>
 </html>

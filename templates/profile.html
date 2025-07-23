@@ -1,2 +1,63 @@
-<h2>Welcome, {{ name }}!</h2>
-<a href="{{ url_for('logout') }}">Logout</a>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("/static/profile-bg.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        .button {
+            background-color: #2196F3;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ name }}!</h1>
+
+        <a class="button" href="{{ url_for('logout') }}">Logout</a>
+        <a class="button" href="{{ url_for('users') }}">Find Friends</a>
+
+        <h2>Your Connections:</h2>
+        {% if friends %}
+            <ul>
+                {% for friend in friends %}
+                    <li>{{ friend.username }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>You haven't connected with anyone yet.</p>
+        {% endif %}
+
+        <h3>{{ current_user.username }}'s Profile</h3>
+        <p><strong>Age:</strong> {{ current_user.age or 'Not set' }}</p>
+        <p><strong>Bio:</strong> {{ current_user.bio or 'No bio provided.' }}</p>
+        <p><strong>Interests:</strong> {{ current_user.interests or 'No interests listed.' }}</p>
+
+        <a href="{{ url_for('edit_profile') }}">Edit Profile</a>
+    </div>
+</body>
+</html>

@@ -24,16 +24,19 @@ def init_db():
         conn.commit()
 
 class User(UserMixin):
-    def __init__(self, id, username, password):
+    def __init__(self, id, username, password, age=None, bio=None, interests=None):
         self.id = id
         self.username = username
         self.password = password
+        self.age = age
+        self.bio = bio
+        self.interests = interests
 
     @staticmethod
     def get_by_username(username):
         with sqlite3.connect(DB_NAME) as conn:
             c = conn.cursor()
-            c.execute("SELECT id, username, password FROM users WHERE username = ?", (username,))
+            c.execute("SELECT id, username, password, age, bio, interests FROM users WHERE username = ?", (username,))
             row = c.fetchone()
             if row:
                 return User(*row)
@@ -43,11 +46,22 @@ class User(UserMixin):
     def get_by_id(user_id):
         with sqlite3.connect(DB_NAME) as conn:
             c = conn.cursor()
-            c.execute("SELECT id, username, password FROM users WHERE id = ?", (user_id,))
+            c.execute("SELECT id, username, password, age, bio, interests FROM users WHERE id = ?", (user_id,))
             row = c.fetchone()
             if row:
                 return User(*row)
         return None
+    
+  ##  @staticmethod
+    def update_profile(self, age, bio, interests):
+        with sqlite3.connect(DB_NAME) as conn:
+            c = conn.cursor()
+            c.execute('''
+                UPDATE users
+                SET age = ?, bio = ?, interests = ?
+                WHERE id = ?
+            ''', (age, bio, interests, self.id))
+            conn.commit()
 
     @staticmethod
     def create(username, password):

@@ -10,7 +10,7 @@
 - [X] Initialize a basic Flask app (`app.py`)
 - [X] Create homepage (`/`) and simple template
 - [X] Create basic HTML template
-- [ ] Set up a basic database using SQL
+- [X] Set up a basic database using SQL
 - [X] Create User model (username, email, password)
 - [X] Implement signup form
 - [X] Implement login and logout functionality with Flask-Login
@@ -19,9 +19,9 @@
 
 ##  2: Dashboard and User Directory
 
-- [ ] Create a dashboard page after login
-- [ ] Display a list of all registered users (except the logged-in user)
-- [ ] Allow viewing user profiles (name, age, interests, etc.)
+- [X] Create a dashboard page after login
+- [X] Display a list of all registered users (except the logged-in user)
+- [X] Allow viewing user profiles (name, age, interests, etc.)
 - [ ] Add "Edit Profile" page for updating user info
 - [ ] Style pages with CSS (simple, readable, large fonts)
 

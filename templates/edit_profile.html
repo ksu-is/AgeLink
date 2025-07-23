@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("/static/profile-bg.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        input, textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px auto;
+            display: block;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Your Profile</h2>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.age.label }} {{ form.age() }}<br>
+            {{ form.bio.label }} {{ form.bio() }}<br>
+            {{ form.interests.label }} {{ form.interests() }}<br>
+            {{ form.submit(class="button") }}
+        </form>
+        <a class="button" href="{{ url_for('profile') }}">Back to Profile</a>
+    </div>
+</body>
+</html>

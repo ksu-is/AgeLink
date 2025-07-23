@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Directory</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-image: url('/static/bg-users.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            margin: 50px auto;
+            max-width: 700px;
+            border-radius: 12px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2em;
+            color: #f9f9f9;
+        }
+
+        .user-card {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-name {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #aee9ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .user-name:hover {
+            color: #00ccff;
+            text-decoration: underline;
+        }
+
+        .user-card form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .user-card form button:hover {
+            background-color: #45a049;
+        }
+
+        .back-home {
+            margin-top: 20px;
+        }
+
+        .back-home a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .back-home a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Directory</h1>
+        {% for user in users %}
+            <div class="user-card">
+                <a class="user-name" href="{{ url_for('view_user', user_id=user.id) }}">
+                    {{ user.username }}
+                </a>
+                {% if not is_connected(current_user.id, user.id) %}
+                    <form method="POST" action="{{ url_for('connect', user_id=user.id) }}">
+                        <button type="submit">Connect</button>
+                    </form>
+                {% else %}
+                    <span>Connected</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <div class="back-home">
+            <a href="{{ url_for('profile') }}">← Back to Profile</a>
+        </div>
+    </div>
+</body>
+</html>
