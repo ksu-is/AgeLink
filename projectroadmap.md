@@ -22,13 +22,13 @@
 - [X] Create a dashboard page after login
 - [X] Display a list of all registered users (except the logged-in user)
 - [X] Allow viewing user profiles (name, age, interests, etc.)
-- [ ] Add "Edit Profile" page for updating user info
-- [ ] Style pages with CSS (simple, readable, large fonts)
+- [X] Add "Edit Profile" page for updating user info
+- [X] Style pages with CSS (simple, readable, large fonts)
 
 ---
 
 ##   3: Messaging Feature
-
+[comment]: <> I am still working on developing below feature. 
 - [ ] Create a "Send Message" form on user profile
 - [ ] Create a Message model in the database (sender, receiver, content, timestamp)
 - [ ] Store and retrieve messages between users
@@ -41,9 +41,9 @@
 
 ##   4: Polish, Accessibility, and Deployment
 
-- [ ] Improve accessibility (large fonts, contrast, labels)
-- [ ] Add basic error handling and flash messages (e.g., "Login failed")
-- [ ] Host frontend and backend using Render / PythonAnywhere
+- [X] Improve accessibility (large fonts, contrast, labels)
+- [X] Add basic error handling and flash messages (e.g., "Login failed")
+- [X] Host frontend and backend using Render / PythonAnywhere
 
 ---
 
@@ -51,7 +51,7 @@
 
 ##  Final Steps
 
-- [ ] I will update my README.md for my project
-- [ ] Push my code to GitHub
+- [X] I will update my README.md for my project
+- [X] Push my code to GitHub
 
 ---
