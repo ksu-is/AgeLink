@@ -9,7 +9,7 @@ Many seniors today feel **isolated**, especially those unfamiliar with complex t
 - **Shared hobbies or interests**
 - **Location & availability**
 - **Real-time chat and video(optional)**
-- **Meetups**
+- **Meetups** 
 
 
 ##  Features
@@ -17,7 +17,7 @@ Many seniors today feel **isolated**, especially those unfamiliar with complex t
 -  Customizable user profiles (interests, availability, location)
 -  Intelligent matching algorithm for connecting users with similar hobbies
 -  Real-time communication via chat or video(Optional)
--  User authentication & secure data management
+-  User authentication & secure data management 
 -  Responsive and accessible UI for older users
 
 ##  Tech Stack
@@ -27,7 +27,7 @@ Many seniors today feel **isolated**, especially those unfamiliar with complex t
 | Backend       | Python, Flask |
 | Frontend      | HTML/CSS |
 | Real-time     | WebSocket (Optional) |
-| Database      | SQL |
+| Database      | SQLite |
 | Deployment    | PythonAnywhere |
 
 
@@ -37,3 +37,7 @@ This project is inspired by open-source efforts and learning resources:
 
 - [SeniorGuardian](https://github.com) / [OldCare Connect](https://github.com) – MERN-stack apps with eldercare features
 - [SeniorConnect](https://github.com) – Flask + MySQL with event & group tools
+- [https://www.youtube.com/playlist?list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU]
+- [https://github.com/maxcountryman/flask-login]
+- [https://docs.python.org/3/library/sqlite3.html]
+- [https://www.w3schools.com/w3css/w3css_templates.asp]
