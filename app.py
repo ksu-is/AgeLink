@@ -5,7 +5,7 @@ from models import User, init_db
 from forms import EditProfileForm
 
 
-app = Flask(__name__)
+app = Flask(__name__) 
 app.config['SECRET_KEY'] = 'your-secret-key'
 
 init_db()  # Created DB & table on startup
@@ -57,19 +57,19 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
-@app.route('/profile')
+@app.route('/profile') 
 @login_required
 def profile():
     friends = User.get_connections(current_user.id)
     return render_template('profile.html', name=current_user.username, friends=friends)
 
 @app.route('/users')
-@login_required
+@login_required 
 def users():
     other_users = User.get_all_except(current_user.id)
     return render_template('user_directory.html', users=other_users, current_user=current_user, is_connected=User.is_connected)
 
-@app.route('/connect/<int:user_id>', methods=['POST'])
+@app.route('/connect/<int:user_id>', methods=['POST']) 
 @login_required
 def connect(user_id):
     User.add_connection(current_user.id, user_id)

@@ -14,8 +14,8 @@ def init_db():
             )
         ''')
 
-        c.execute('''
-            CREATE TABLE IF NOT EXISTS connections (
+        c.execute(''' 
+            CREATE TABLE IF NOT EXISTS connections ( 
                 user_id INTEGER,
                 friend_id INTEGER,
                 UNIQUE(user_id, friend_id)
@@ -70,7 +70,7 @@ class User(UserMixin):
             c.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
             conn.commit()
 
-    @staticmethod
+    @staticmethod 
     def get_all_except(user_id):
         with sqlite3.connect(DB_NAME) as conn:
             c = conn.cursor()
@@ -78,7 +78,7 @@ class User(UserMixin):
             rows = c.fetchall()
             return [User(*row) for row in rows]
 
-    @staticmethod
+    @staticmethod 
     def add_connection(user_id, friend_id):
         with sqlite3.connect(DB_NAME) as conn:
             c = conn.cursor()
